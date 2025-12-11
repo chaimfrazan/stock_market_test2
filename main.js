@@ -16,27 +16,30 @@ while (booli) {
   let choice = input("please enter your choice: ");
   if (choice == "1") {
     let searchChoice = input("please enter identifier! id or name: ");
-    console.log(searchStock(searchChoice,data));
+    console.log(searchStock(searchChoice, data));
   } else if (choice == "2") {
-    let givenPrice = input("please enter a price: ");
-    let belowAndAbove = input(
-      "please enter above/below of stocks of the your price: "
-    );
-    let boolchoice = true;
-    if (belowAndAbove == "above") {
-      boolchoice = true;
-    } else if (belowAndAbove == below) {
-      boolchoice = false;
-    } else {
-      belowAndAbove = input(
+    let givenPrice = +input("please enter a price: ");
+    while (!Number.isNaN(givenPrice)) {
+      let belowAndAbove = input(
         "please enter above/below of stocks of the your price: "
       );
+      let boolchoice = true;
+      if (belowAndAbove == "above") {
+        boolchoice = true;
+      } else if (belowAndAbove == "below") {
+        boolchoice = true;
+      } else {
+        belowAndAbove = input(
+          "please enter above/below of stocks of the your price: "
+        );
+      }
+      console.log(filterStocksByPrice(givenPrice, boolchoice, data));
+      break;
     }
-    console.log(filterStocksByPrice(givenPrice, boolchoice, data));
   } else if (choice == "3") {
     let operation = input("enter your operation: ");
     let identifier = input("please enter identifier! id or name: ");
-    OperateOnStock(operation, identifier ,data);
+    OperateOnStock(operation, identifier, data);
   } else if (choice == "4") {
     console.log("----good bye----");
     booli = false;
