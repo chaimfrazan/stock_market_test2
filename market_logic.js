@@ -29,7 +29,7 @@ export function filterStocksByPrice(givenPrice, above, data) {
   return newData;
 }
 
-// console.log(filterStocksByPrice(5, true, stockMarket));
+
 
 export function OperateOnStock(operation, identifier) {
   if (operation == "sell") {
