@@ -16,7 +16,7 @@ while (booli) {
   let choice = input("please enter your choice: ");
   if (choice == "1") {
     let searchChoice = input("please enter identifier! id or name: ");
-    console.log(searchStock(searchChoice));
+    console.log(searchStock(searchChoice,data));
   } else if (choice == "2") {
     let givenPrice = input("please enter a price: ");
     let belowAndAbove = input(
@@ -36,7 +36,7 @@ while (booli) {
   } else if (choice == "3") {
     let operation = input("enter your operation: ");
     let identifier = input("please enter identifier! id or name: ");
-    OperateOnStock(operation, identifier);
+    OperateOnStock(operation, identifier ,data);
   } else if (choice == "4") {
     console.log("----good bye----");
     booli = false;
