@@ -53,6 +53,8 @@ export function OperateOnStock(operation, identifier) {
         }
       }
     }
+    console.log('Your sale was successful');
+    
   } else if (operation == "buy") {
     console.log('You have selected a buy action');
     
@@ -79,4 +81,5 @@ export function OperateOnStock(operation, identifier) {
       }
     }
   }
+   console.log('Your buy was successful');
 }

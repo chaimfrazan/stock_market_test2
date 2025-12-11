@@ -9,32 +9,36 @@ import input from "analiza-sync";
 
 const data = stockMarket;
 let booli = true;
-console.log('------welcome to stock market------');
+console.log("------welcome to stock market------");
 
 while (booli) {
   theMenue();
   let choice = input("please enter your choice: ");
   if (choice == "1") {
-    let searchChoice = input('please enter identifier! id or name: ')
+    let searchChoice = input("please enter identifier! id or name: ");
     console.log(searchStock(searchChoice));
-  }
-  else if (choice == "2") {
-    let givenPrice = input('please enter a price: ')
-    let belowAndAbove = input('please enter above/below of stocks of the your price: ')
-    let boolchoice = true
-    if (belowAndAbove == 'above') {
-        boolchoice = true
+  } else if (choice == "2") {
+    let givenPrice = input("please enter a price: ");
+    let belowAndAbove = input(
+      "please enter above/below of stocks of the your price: "
+    );
+    let boolchoice = true;
+    if (belowAndAbove == "above") {
+      boolchoice = true;
+    } else if (belowAndAbove == below) {
+      boolchoice = false;
+    } else {
+      belowAndAbove = input(
+        "please enter above/below of stocks of the your price: "
+      );
     }
-    else if (belowAndAbove == below){
-        boolchoice = false
-    }
-    else {belowAndAbove = input('please enter above/below of stocks of the your price: ')}
-    console.log(filterStocksByPrice(givenPrice,boolchoice,data));
+    console.log(filterStocksByPrice(givenPrice, boolchoice, data));
+  } else if (choice == "3") {
+    let operation = input("enter your operation: ");
+    let identifier = input("please enter identifier! id or name: ");
+    OperateOnStock(operation, identifier);
+  } else if (choice == "4") {
+    console.log("----good bye----");
+    booli = false;
   }
-  else if (choice == "3") {
-    let operation = input('enter your operation: ')
-    let identifier = input('please enter identifier! id or name: ')
-    OperateOnStock(operation,identifier)
-  }
-
 }
